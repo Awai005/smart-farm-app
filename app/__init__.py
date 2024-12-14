@@ -4,7 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 from app.logger import configure_logging
 from app.tasks.scheduler import configure_scheduler
-from app.routes import periodic, tank, nodes
+from app.routes import periodic, tank, node
 
 def create_app():
     app = Flask(__name__)
@@ -27,3 +27,4 @@ def create_app():
     return app
 
 app = create_app()
+
