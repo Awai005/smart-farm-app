@@ -8,7 +8,7 @@ from app.tasks.scheduler import configure_scheduler
 from app.routes import periodic, tank, node
 from app.config import Config
 
-db = SQLAlchemy()
+from app.extensions import db
 
 def create_app():
     app = Flask(__name__)

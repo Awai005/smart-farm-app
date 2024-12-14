@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from app.services.lora_service import send_lora_request
 from app.models import NodeData
-from app import db
+from app.extensions import db
 
 blueprint = Blueprint('periodic', __name__)
 
