@@ -1,8 +1,8 @@
 import requests
 import logging
 
+LORA_SERVICE_URL = "https://40ce-124-111-21-208.ngrok-free.app"
 logger = logging.getLogger(__name__)
-from app.config import LORA_SERVICE_URL
 
 def send_lora_request(method, endpoint, **kwargs):
     url = f"{LORA_SERVICE_URL}{endpoint}"
