@@ -1,13 +1,19 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 from app.logger import configure_logging
 from app.tasks.scheduler import configure_scheduler
 from app.routes import periodic, tank, node
+from app.config import Config
+
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
+    app.config.from_object(Config)
+    db.init_app(app)
     CORS(app)
 
     # Configure logging
